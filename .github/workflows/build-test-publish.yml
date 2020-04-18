@@ -42,7 +42,7 @@ jobs:
     - name: Cache and install node modules
       uses: bahmutov/npm-install@v1
     - name: Typecheck
-      run: tsc --no-emit
+      run: tsc --noEmit
       
   test:
     name: Test
