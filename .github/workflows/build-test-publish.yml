@@ -39,8 +39,6 @@ jobs:
         node-version: 13.x
     - name: Cache and install node modules
       uses: bahmutov/npm-install@v1
-    - name: Typecheck
-      uses: andoshin11/typescript-error-reporter-action@v1.0.2
     - name: Test
       run: npm run test
     
