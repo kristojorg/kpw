@@ -1,0 +1,11 @@
+lib/*
+dist/*
+node_modules/*
+typings/*
+*~
+npm-debug.log
+config/cm_libraries.txt
+.yalc
+yalc.lock
+wallaby.js
+config/*
