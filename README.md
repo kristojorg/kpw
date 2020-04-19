@@ -2,6 +2,8 @@ TEST
 
 # circulation-patron-web
 
+THIS IS ANOTHER FEATURE
+
 A Circulation catalog web interface for library patrons.
 
 ## Background
