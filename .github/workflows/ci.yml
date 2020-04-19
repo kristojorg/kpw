@@ -67,8 +67,8 @@ jobs:
     - name: Test
       run: npm run test
 
-  publish:
-    name: Release
+  release:
+    name: Tag & Release
     # only publish if this is a push to beta or master.
     # we don't publish PRs to Docker Hub currently
     if: github.event == 'push'
