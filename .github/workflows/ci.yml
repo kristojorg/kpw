@@ -4,9 +4,6 @@
 #     - Lint
 #     - Typecheck
 #     - Test
-#   - Only on pushes to master/beta
-#     - Create a new git tag
-#     - Automatically create a new release with content
 name: CI
 
 on:
@@ -66,34 +63,3 @@ jobs:
       uses: bahmutov/npm-install@v1
     - name: Test
       run: npm run test
-
-  release:
-    name: Tag & Release
-    # only release if this is a push to beta or master.
-    # we don't publish PRs to Docker Hub currently
-    if: github.event_name == 'push'
-    # if any of the above fail, do not continue
-    needs: [test, typecheck, lint]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        # the tag will match the package.json version (eg. 1.0.0 or 1.1.0-beta.2)
-      - name: Tag
-        id: autotagger
-        uses: butlerlogic/action-autotag@stable
-        with:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          strategy: package
-          prefix: v
-      - name: Release
-        id: create_release
-        if: steps.autotagger.outputs.tagname != ''
-        uses: actions/create-release@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.autotagger.outputs.tagname }}
-          release_name: Version ${{ steps.autotagger.outputs.version }}
-          body: ${{ steps.autotagger.outputs.tagmessage }}
-          draft: false
-          prerelease: github.ref == 'beta'
