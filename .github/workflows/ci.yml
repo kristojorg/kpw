@@ -7,10 +7,6 @@
 name: CI
 
 on:
-  # will run whenever commits are pushed to master or beta
-  # eg. when merging a PR into beta
-  push:
-    branches: [master, beta]
   # will run on all PRs that are opened or updated (synchronized)
   pull_request:
     types: [opened, synchronize]
