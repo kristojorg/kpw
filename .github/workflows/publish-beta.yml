@@ -16,6 +16,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Get short SHA
+        id: get_sha
+        run: echo "::set-output name=short_sha::$(git rev-parse --short HEAD)"
       - name: Publish to Docker Hub
         id: publish_docker_hub
         uses: docker/build-push-action@v1
@@ -23,5 +26,5 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: kristojorgenson/patronweb
-          tags: beta.${{ github.sha }}, ${{ github.sha }}
+          tags: beta, beta.${{ steps.vars.outputs.sha_short }}
           add_git_labels: true
