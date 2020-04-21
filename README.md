@@ -7,6 +7,8 @@ AND ANOTHER
 #4 kid
 new
 
+MORE NEW SHIT
+
 A Circulation catalog web interface for library patrons.
 
 ## Background
