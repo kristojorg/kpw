@@ -18,6 +18,7 @@ FINALLY
 PLEASE WORK
 
 WILL IT, HUH??
+short sha
 
 A Circulation catalog web interface for library patrons.
 
