@@ -4,9 +4,10 @@
 #     - Lint
 #     - Typecheck
 #     - Test
-# when a PR is closed 
-#   - if on beta, publish as beta to docker hub
-#   - if on master, create release with the contents of PR, then publish to hub
+#   - When PR Closed
+#     - if on beta, publish as beta to docker hub
+#     - if on master, create release with the contents of PR, we
+#       will upload that image in a separate workflow when the release is created.
 name: CI
 
 on:
@@ -65,7 +66,7 @@ jobs:
           
   releaseMaster:
     name: Tag and Release master
-    # only publish if this is a pull request being closed from 
+    # only tag and release if this is a pull request being closed from 
     # a merge event on the master branch
     if: |
       github.base_ref == 'master' && 
