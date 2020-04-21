@@ -17,6 +17,8 @@ FINALLY
 
 PLEASE WORK
 
+WILL IT, HUH??
+
 A Circulation catalog web interface for library patrons.
 
 ## Background
