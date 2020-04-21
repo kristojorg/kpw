@@ -7,7 +7,7 @@ on:
     types: [created, published]
 
 jobs:     
-  publishMaster:
+  publish_master:
     name: Publish master image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -19,5 +19,4 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: kristojorgenson/patronweb
           tag_with_ref: true
-          tag_with_sha: true
           add_git_labels: true
