@@ -12,7 +12,7 @@ jobs:
   release_master:
     name: Tag and Release master
     # only run if PR is merged (not just closed)
-    if: github.event.pull_request.merge
+    if: github.event.pull_request.merged
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
