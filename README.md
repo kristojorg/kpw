@@ -17,6 +17,11 @@ FINALLY
 
 PLEASE WORK
 
+WILL IT, HUH??
+short sha
+
+please work
+
 A Circulation catalog web interface for library patrons.
 
 ## Background
